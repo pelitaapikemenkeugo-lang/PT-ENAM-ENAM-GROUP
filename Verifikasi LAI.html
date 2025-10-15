@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verifikasi LAI</title>
+  <link href="./Verifikasi LAI_files/css2" rel="stylesheet">
+  <style>
+    body {
+      font-size: 16px;
+      font-family: 'Roboto', serif;
+      background: #c1c1c1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .page-container {
+      padding: 1em 2em;
+      background: white;
+      margin: 1em;
+      border-radius: 4px;
+      box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 
+                  0 1px 1px 0 rgb(0 0 0 / 14%), 
+                  0 1px 3px 0 rgb(0 0 0 / 12%);
+    }
+    .header {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      border-bottom: 1px solid #989898;
+      padding: 0.5em;
+    }
+    .content-container {
+      padding: 0.5em;
+    }
+    .content-header {
+      margin: 0.75em;
+    }
+    .disclaimer-container {
+      padding: 1em;
+      font-style: italic;
+    }
+    .explanation-container {
+      padding: 1em;
+      font-size: 10px;
+    }
+    .data-container {
+      clear: both;
+    }
+    .footer {
+      border-top: 1px solid #989898;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 0.5em;
+    }
+    .footer-content {
+      padding: 0 1em;
+      text-align: center;
+    }
+    .footer-generated-content {
+      padding-top: 2em;
+      font-size: 10px;
+    }
+    .emphasis-text {
+      font-weight: bold;
+      font-style: italic;
+    }
+    @media screen and (min-width: 40em) {
+      .data-container {
+        height: 30px;
+      }
+      .data-title {
+        float: left;
+        width: 200px;
+      }
+      .data-content {
+        float: left;
+      }
+      .data-content::before {
+        content: ': ';
+      }
+    }
+    @media screen and (max-width: 40em) {
+      .page-container {
+        padding: 5px;
+        margin: 0;
+      }
+      .data-container {
+        padding: 5px;
+      }
+      .data-title {
+        width: 100%;
+        font-weight: bold;		
+        padding: 5px;
+      }
+      .data-content {
+        width: 100%;
+        padding: 5px;
+        margin-left: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="header">
+      <span>KEMENTERIAN KEUANGAN REPUBLIK INDONESIA</span><br>
+      <span>DIREKTORAT JENDERAL STABILITAS DAN PENGEMBANGAN SEKTOR KEUANGAN</span><br>
+      <span>DIREKTOR PEMBINAAN DAN PENGAWASAN PROFESI KEUANGAN</span>
+    </div>
+
+    <div class="content-container">
+      <div class="content-header">
+        Laporan Auditor Independen <span class="emphasis-text">telah terdaftar</span> 
+        pada aplikasi Pelita di Direktorat Pembinaan dan Pengawasan Profesi Keuangan dengan informasi sebagai berikut:
+      </div>
+
+      <div class="data-container"><div class="data-title">A. Nama KAP</div><div class="data-content">Togar Manik</div></div>
+      <div class="data-container"><div class="data-title">B. Nama Klien</div><div class="data-content">BERKATMAS MULIA GUNA [PT]</div></div>
+      <div class="data-container"><div class="data-title">C. Periode</div><div class="data-content">01/01/2024 s.d. 31/12/2024</div></div>
+      <div class="data-container"><div class="data-title">D. No. LAI</div><div class="data-content">00400/2.1361/AU.2/03/0096-1/1/IX/2025</div></div>
+      <div class="data-container"><div class="data-title">E. Tgl. LAI</div><div class="data-content">15/09/2025</div></div>
+      <div class="data-container"><div class="data-title">F. AP Penanggungjawab</div><div class="data-content">Drs. Togar Manik, Ak., CPA., CPI</div></div>
+      <div class="data-container"><div class="data-title">G. Opini</div><div class="data-content">WDP</div></div>
+      <div class="data-container"><div class="data-title">H. Total Aset</div><div class="data-content">IDR 26.599.837.655</div></div>
+      <div class="data-container"><div class="data-title">I. Laba/Rugi Bersih</div><div class="data-content">IDR 2.356.784.620</div></div>
+
+      <div class="disclaimer-container">
+        “Disclaimer: Semua informasi dalam QR Code dibuat oleh KAP yang bersangkutan, DPPPK tidak bertanggung jawab atas kesalahan informasi yang disampaikan KAP.“
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-content">
+        Untuk informasi lebih lanjut silahkan hubungi (021) 3505112 atau email ke 
+        <a href="mailto:kemenkeu.prime@kemenkeu.go.id">kemenkeu.prime@kemenkeu.go.id</a>
+      </div>
+      <div class="footer-content footer-generated-content">
+        dibuat oleh sistem pada <time id="tanggal"></time> Jam <time id="jam"></time>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Jalankan sekali saja ketika halaman dibuka
+  const sekarang = new Date();
+
+  // Format tanggal (contoh: 11 Oktober 2025)
+  const optionsTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
+  const tanggal = sekarang.toLocaleDateString('id-ID', optionsTanggal);
+
+  // Format jam (contoh: 10:14:46)
+  const jam = sekarang.toLocaleTimeString('id-ID', { hour12: false });
+
+  // Tampilkan ke HTML
+  document.getElementById("tanggal").textContent = tanggal;
+  document.getElementById("jam").textContent = jam;
+</script>
+
+</body>
+</html>
